@@ -4,7 +4,7 @@ public class Ej5_Menor_Suma_Tablas {
 	
 //Crear una función a la que se le pasen dos tablas y nos diga cuál contiene una menor suma de sus elementos
 	
-	static int menorsuma (int a[], int b[]) {
+	public static void menorSuma (int a[], int b[]) {
 		
 	int suma1=0, suma2=0; //Declaramos las variables para las sumas
 	
@@ -20,7 +20,7 @@ public class Ej5_Menor_Suma_Tablas {
 		System.out.println("El primer array contiene una menor suma, array 1 = "+ suma1 + " array 2 = "+ suma2);
 	}else {
 		System.out.println("Los dos arrays tienen el mismo valor: "+ suma1);
-	}return 0;
+	}
 	//Ponemos las condiciones correspondientes y terminamos la funcion
 		
 		
@@ -34,15 +34,15 @@ public class Ej5_Menor_Suma_Tablas {
 	
 	for (int i=0; i<array1.length;i++) {//Recorremos los arrays para asignarle valores
 		
-		System.out.println("Introduce un valor para el primer array");
+		System.out.println("Introduce el " + (i+1) +"º"+ " valor para el primer Array");
 		array1[i]=sc.nextInt();
 		
 	}for (int i=0;i<array2.length;i++) {//Recorremos el segundo array
 		
-		System.out.println("Introduce un valor para el segundo array");
+		System.out.println("Introduce el " + (i+1) +"º"+ " valor para el segundo Array");
 		array2[i]=sc.nextInt();		
 	}
-	menorsuma(array1,array2);//Llamamos a la funcion
+	menorSuma(array1,array2);//Llamamos a la funcion
 
 	}
 

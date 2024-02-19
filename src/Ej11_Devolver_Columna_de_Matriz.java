@@ -4,22 +4,25 @@ public class Ej11_Devolver_Columna_de_Matriz {
 	
 //Devuelve una columna (array unidimensional) de un array bidimensional que se pasa como parámetro.
 	
-	static int Columna (int matriz [][], int columna) {
+	public static int []Columna (int matriz [][], int columna) {
 		
 	int array[] = new int [matriz.length];	//Declaramos un array que sera la fila que se mostrara
 	
 	for (int i=0; i<matriz.length;i++) {
 		for (int j=0; j<matriz.length;j++) { //Recorremos la matriz
 			
-			if(j==columna) {               
-				array[i]=matriz[i][j]; /*Si el valor de j es el mismo que el de fila almacenamos los valores
-				                         *en el array
+			if(j==(columna-1)) {               
+				array[i]=matriz[i][j];  /*Si el valor de j es el mismo que el de la columna
+				                         *almacenamos los valores en el array
+				                         *(Ponemos -1 ya que las filas y columnas siempre
+				                         *empiezan desde el cero y hemos pedido "La fila" que
+				                         *quiere ver, por lo que presuponemos que empezara
+				                         *a contar desde la 1ª columna
 				                         */
 			}
 		}	
 		}
-	System.out.println("Los valores de la fila son: " + Arrays.toString(array)); //Mostramos los valores del array
-    return 0;
+    return array;
 		
 		
 	}
@@ -28,7 +31,7 @@ public class Ej11_Devolver_Columna_de_Matriz {
 		
 		Scanner sc = new Scanner (System.in);
 		
-		System.out.println("Introduce la longitud de la matriz"); //Pedimos la longitud de la matriz
+		System.out.println("Introduce la dimension de la matriz"); //Pedimos la longitud de la matriz
 		int n = sc.nextInt();
 		
 		int matriz [][] = new int [n][n];
@@ -36,15 +39,19 @@ public class Ej11_Devolver_Columna_de_Matriz {
 		for (int i=0; i<matriz.length;i++) {
 			for (int j=0; j<matriz.length;j++) {
 				
-			System.out.println("Introduce un valor para la fila "+ i + " columna "+ j); //Añadimos valores
+				System.out.println("Introduce un valor para la " + (i+1)+ " fila y "+ (j+1)
+						+ " columna"); //Añadimos valores
 				matriz[i][j] = sc.nextInt();	
 				
 			}
 		}
-		System.out.println("Que columna quieres ver?");//Pedimos la fila que mostrar
+		System.out.println("Que columna quieres ver? (tienes " + matriz.length + " columnas)");//Pedimos la columna que queremos mostrar
 		int c=sc.nextInt();
 		
-		Columna(matriz,c);
+		System.out.println("Los valores de la columna son: " +
+		Arrays.toString(Columna(matriz,c))); //Mostramos los valores del array
+ 
+
 
 	}
 

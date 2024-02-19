@@ -7,23 +7,23 @@ public class Ej13_Alumnos_Notas {
  */
 	
 	
-	static String MayorNota (String nombres[], int notas[]) {
+	public static String mayorNota (String nombres[], int notas[]) {
 	
-	String mayornombre="";
-	int mayornota=0, nota=0;
+	String mayornombre=""; //Declaramos un String vacio, el cual sera el nombre de la persona con mayor nota
+	int mayornota=0;
 		
 	for (int i=0;i<nombres.length;i++) {
 		
-		if (notas[i]>nota) {
-			
-			nota=notas[i];
+		if (i==0) { //Si es la primera nota asignamos el nombre y la nota
+			mayornota=notas[i];
+			mayornombre=nombres[i];
+		}else if (notas[i]>mayornota) { //Si la nota es mayor que la anterior mejor nota actualizamos las variables
 			mayornombre=nombres[i];
 			mayornota=notas[i];
 			
 		}	
 		
-	}System.out.println("La persona con mejor nota es: " + mayornombre + " con un: " + mayornota);
-	return mayornombre;
+	}return mayornombre;
 		
 		
 		
@@ -31,10 +31,11 @@ public class Ej13_Alumnos_Notas {
 
 	public static void main(String[]args) {
 			
-	String nombres[] = {"Manuel", "Lucia", "Juan", "Marta"};
-	int notas[] = {7,10,6,4};
+	String nombres[] = {"Manuel", "Lucia", "Juan", "Marta"}; //Declaramos el array con los nombres
+	int notas[] = {7,10,6,4}; //Declaramos el array con las notas
 	
-	MayorNota(nombres,notas);
+	System.out.println("La persona con mejor nota es: " + mayorNota(nombres,notas)); //Llamamos a la variable
+	
 	
 	
 	

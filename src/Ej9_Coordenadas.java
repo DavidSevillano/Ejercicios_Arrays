@@ -5,15 +5,20 @@ public class Ej9_Coordenadas {
 /*Función a la que se le pase una matriz bidimensional, unas coordenadas y devuelva el elemento
  * que contiene en esa posición.	
  */
-	static int Coordenadas (int matriz[][], int coordenadax, int coordenaday) {
+	public static int Coordenadas (int matriz[][], int coordenadax, int coordenaday) {
     
-	if (coordenadax > matriz.length || coordenaday > matriz.length){ 
-		System.out.println("Las coordenadas introducidas no son validas");
+	if (coordenadax-1 > matriz.length || coordenaday-1 > matriz.length){   //Si la fila o columna que
+		System.out.println("Las coordenadas introducidas no son validas"); /*hemos introducido es mayor
+		                                                                    *a la longitud de la matriz
+		                                                                    *saltara un mensaje de error
+		                                                                    *(Debe ser -1 ya que las filas
+		                                                                    *y columnas empiezan por 0
+		                                                                    */
 	}
 	
 	
-	System.out.println("El valor es " + matriz[coordenadax][coordenaday]);
-	return matriz[coordenadax][coordenaday];	
+	
+	return matriz[coordenadax-1][coordenaday-1]; //Devolvemos el valor	
 		
 	}
 	
@@ -35,13 +40,15 @@ public class Ej9_Coordenadas {
 			matriz [i][j] = sc.nextInt();
 				
 		}
-	}System.out.println("Introduce la coordenada x");//Pedimos 
+	}System.out.println("Introduce la fila"); //Pedimos la fila en la que se encuentra el valor
 	int x=sc.nextInt();
 	
-	System.out.println("Introduce la coordenada y");
+	System.out.println("Introduce la columna"); //Pedimos la columna en la que se encuentra el valor
 	int y=sc.nextInt();
 	
-	Coordenadas (matriz,x,y);
+	System.out.println("El valor es " + Coordenadas (matriz,x,y));
+	
+
 			
 		
 		

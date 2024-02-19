@@ -6,7 +6,7 @@ public class Ej6_Array_1_Elemento_Más {
  * (que también se le pasa como parámetro)
  */
 	
-	static int arraymas (int array[], int elemento ) {
+	public static int [] arrayMas (int array[], int elemento ) {
 	
 	int array2[] = new int[array.length+1];// Declaramos el nuevo array con un elemento más que el array del parametro
 	
@@ -17,9 +17,7 @@ public class Ej6_Array_1_Elemento_Más {
 	}array2[array.length]=elemento;/*Al indice que es igual a la longitud del array original le ponemos el valor
 	                               *que introdujimos en el parametro de entrada
 	                               */
-	
-	System.out.println(Arrays.toString(array2)); //Mostramos el nuevo array
-	return 0;
+	return array2; //Devolvemos el array
 		
 		
 		
@@ -41,7 +39,7 @@ public class Ej6_Array_1_Elemento_Más {
 	System.out.println("Que numero le quieres añadir al array?");//Pedimos el nuevo valor que tendra el array
 	int n=sc.nextInt();
 	
-	arraymas(array,n);
+	System.out.println(Arrays.toString(arrayMas(array,n))); //Mostramos el nuevo ;
 		
 		
 
